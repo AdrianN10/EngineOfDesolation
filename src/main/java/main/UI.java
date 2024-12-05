@@ -80,10 +80,14 @@ public class UI {
         timeline.play();
 
 
-        //START BUTTON
+        /*
+            TODO instead of hardcoding dimensions of buttons,
+             use Bindings to dynamically adjust dimensions
+             Ex: startButton.layoutXProperty().bind(window.widthProperty().subtract(startButton.widthProperty()).divide(2));
+         */
         Button startButton = new Button("Start");
         startButton.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 24px; -fx-background-color: white;");
-        startButton.setLayoutX((800 - 150) / 2); // Center horizontally (approximate for button width)
+        startButton.setLayoutX((double) (800 - 150) / 2); // Center horizontally (approximate for button width)
         startButton.setLayoutY(400);  // Center vertically (approximate for button height)
 
         // Start button functionality
@@ -166,6 +170,8 @@ public class UI {
         bgPane[bgNum].getChildren().add(bgImageView[bgNum]);
         ((Pane) window.getScene().getRoot()).getChildren().add(bgPane[bgNum]);
     }
+
+    //TODO createObject() and createObjectAndReturn() are very identical, perhaps condense them into one helper method?
 
     public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, String objFileName,
                              String choice1Name, String choice2Name, String choice3Name, String choice1Command, String choice2Command, String choice3Command) {

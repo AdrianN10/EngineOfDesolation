@@ -13,9 +13,11 @@ public class Event03 {
     public void lookHondaur() {
         gm.ui.messageText.setText("Its a Hondaur");
     }
+
     public void talkHondaur() {
         gm.ui.messageText.setText("The Hondaur growls at you and revs his engine ");
     }
+
     public void attackHondaur() {
         gm.ui.messageText.setText("*You start beating the shit out of the poor Hondaur*");
 

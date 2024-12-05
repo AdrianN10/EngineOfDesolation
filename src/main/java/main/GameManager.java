@@ -42,7 +42,7 @@ public class GameManager extends Application {
     SoundEffect se = new SoundEffect();
 
     //SOUND
-     public URL mainTheme = getClass().getClassLoader().getResource("mainTheme.wav");
+    public URL mainTheme = getClass().getClassLoader().getResource("mainTheme.wav");
     public URL monsterTheme = getClass().getClassLoader().getResource("monsterTheme.wav");
     public URL casinoMusic = getClass().getClassLoader().getResource("casinoMusic.wav");
     public URL slotWin = getClass().getClassLoader().getResource("slotWin.wav");
