@@ -10,6 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class TimeManager {
+    //TODO use log4j2 for exception handling. For larger applications, it is usually better to use a logger than System.err.println()
+
     private static final String BINARY_FILE_NAME = "fastest_times.dat";
     private static final String LEADERBOARD_FILE_NAME = "leaderboard.csv";
     public ArrayList<Long> fastestTimes = new ArrayList<>();
@@ -111,6 +113,8 @@ public class TimeManager {
     }
 
     //TODO create a method to reset the leaderboard
+
+    //TODO use a multithread to show the user's time move down the ranks of a leaderboard
 
     //TODO implement a way to add the date to when a leaderboard entry is made
 }

@@ -343,6 +343,8 @@ public class UI {
         alert.showAndWait();
     }
 
+    //TODO create a button/option for the user to view a live leaderboard that checks if the user's running time is greater than entries on the leaderboard and updates accordingly
+
     public void generateScene() {
         // SCENE 1
         createBackground(1, "bedroom.png");

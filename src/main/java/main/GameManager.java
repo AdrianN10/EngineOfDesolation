@@ -41,6 +41,9 @@ public class GameManager extends Application {
     Music music = new Music();
     SoundEffect se = new SoundEffect();
 
+    //TODO create an String array with the name of the .wav files
+
+    //TODO create an enhanced for loop that applies getClass().getClassLoader.getResource() on each .wav file, parse the name of the .wav file, and assign it to a variable of that name
     //SOUND
     public URL mainTheme = getClass().getClassLoader().getResource("mainTheme.wav");
     public URL monsterTheme = getClass().getClassLoader().getResource("monsterTheme.wav");

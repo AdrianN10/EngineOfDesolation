@@ -107,7 +107,7 @@ public class Hondaur extends Monster {
     }
 
 
-    //No need to write all these empty overrides
+    //No need to write all these empty overrides. Just make these methods concrete in their respective monster clases. Why is code for Wheeler Monster in Hondaur class?
     @Override
     public void lookTheodoor() {}
     @Override
