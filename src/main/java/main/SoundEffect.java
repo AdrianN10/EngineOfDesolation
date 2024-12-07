@@ -12,8 +12,7 @@ public class SoundEffect {
 
     Clip clip;
 
-    public void setFile(URL name){
-
+    public void setFile(URL name) {
         try{
             AudioInputStream sound = AudioSystem.getAudioInputStream(name);
             clip = AudioSystem.getClip();

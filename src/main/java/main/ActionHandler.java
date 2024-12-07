@@ -20,6 +20,12 @@ public class ActionHandler implements EventHandler<ActionEvent> {
         handleAction(yourChoice);
     }
 
+    //TODO create an enum to map an interaction with a Honda Boy to a respective action
+
+
+
+    //TODO break handleAction() into multiple smaller functions that deal with each scene to make code more readable
+
     // handles the action commands
     public void handleAction(String yourChoice) {
         switch (yourChoice) {
@@ -182,7 +188,7 @@ public class ActionHandler implements EventHandler<ActionEvent> {
                 gm.sChanger.showScene1();
                 break;
             case "goScene2":
-                if(gm.player.hasFlashlight == 1){
+                if(gm.player.hasFlashlight){
                     gm.sChanger.showScene2();
                 }
                 else {
@@ -203,7 +209,7 @@ public class ActionHandler implements EventHandler<ActionEvent> {
                 }
                 break;
             case "goScene5":
-                if(gm.player.hasPistol == 1){
+                if(gm.player.hasPistol){
                     gm.sChanger.showScene5();
                 }
                 else {

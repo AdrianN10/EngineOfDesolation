@@ -14,8 +14,8 @@ public class Event04 {
         gm.ui.messageText.setText("This is Denzel. (He listens to Valorant music)");
     }
     public void talkDenzel() {
-        if(gm.player.hasPistol == 0) {
-            gm.player.hasPistol = 1;
+        if(!gm.player.hasPistol) {
+            gm.player.hasPistol = true;
             gm.ui.messageText.setText("My oh my I've been waiting for you heh. Here's a glock.\nI saw a monster running with an engine towards the casino!");
 
             gm.player.updatePlayerStatus();

@@ -10,9 +10,10 @@ public class Player {
     public int playerMaxLife;
     public int playerLife;
 
-    public int hasFlashlight;
-    public int hasPistol;
-    public int hasAk47;
+    //TODO: since the game only uses one of each of these items, use a boolean to check if player has these items
+    public boolean hasFlashlight;
+    public boolean hasPistol;
+    public boolean hasAk47;
 
 
     public Player(GameManager gm) {
@@ -24,9 +25,9 @@ public class Player {
 
         playerMaxLife = 5;
         playerLife = 2;
-        hasFlashlight = 0;
-        hasPistol = 0;
-        hasAk47 = 0;
+        hasFlashlight = false;
+        hasPistol = false;
+        hasAk47 = false;
 
         updatePlayerStatus();
     }
@@ -48,9 +49,9 @@ public class Player {
         }
 
         // CHECK PLAYER ITEMS
-        gm.ui.flashlightLabel.setVisible(hasFlashlight == 1);
-        gm.ui.pistolLabel.setVisible(hasPistol == 1);
-        gm.ui.ak47Label.setVisible(hasAk47 == 1);
+        gm.ui.flashlightLabel.setVisible(hasFlashlight);
+        gm.ui.pistolLabel.setVisible(hasPistol);
+        gm.ui.ak47Label.setVisible(hasAk47);
         }
     }
 

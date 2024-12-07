@@ -19,7 +19,7 @@ public class Theodoor extends Monster {
 
     @Override
     public void lookTheodoor() {
-        if(currentLife >0) {
+        if(currentLife > 0) {
             gm.ui.messageText.setText("You see " + monster+ " the door ready to feast on your adorable body.");
             gm.playSE(gm.monsterRoar);
         }
@@ -31,7 +31,7 @@ public class Theodoor extends Monster {
 
     @Override
     public void talkTheodoor() {
-        if(currentLife >0) {
+        if(currentLife > 0) {
             gm.ui.messageText.setText(monster+" the door roars at you, its hinges creaking.");
             gm.playSE(gm.monsterRoar);
         }
@@ -47,7 +47,7 @@ public class Theodoor extends Monster {
         gm.player.playerLife -=1;
         gm.player.updatePlayerStatus();
         gm.ui.messageText.setText("You shoot "+monster+" the door with your glock! (Its health decreases by 2)");
-        if(gm.player.playerLife <=0){
+        if(gm.player.playerLife < 1){
             gm.sChanger.showGameOverScreen(5);
             gm.ui.messageText.setText("You baka! You tested your luck!");
         }

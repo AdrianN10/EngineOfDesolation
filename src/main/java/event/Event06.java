@@ -8,7 +8,6 @@ public class Event06 {
     private ImageView denzel;
 
     public Event06(GameManager gm) {
-
         this.gm = gm;
     }
     public void reset(){
@@ -26,8 +25,8 @@ public class Event06 {
     }
     public void playDenzel(){
 
-        if(gm.player.hasAk47 == 0) {
-            gm.player.hasAk47 = 1;
+        if(!gm.player.hasAk47) {
+            gm.player.hasAk47 = true;
             gm.ui.messageText.setText("*You cheer Denzel up by playing Valorant music*\nYou realy know how to cheer me up!\n *Denzel gives you an ak47*");
 
             gm.player.updatePlayerStatus();
@@ -43,6 +42,7 @@ public class Event06 {
     public void lookBrandon() {
         gm.ui.messageText.setText("This is Brandon. He seems to be doing a fit check");
     }
+
     public void talkBrandon() {
         gm.ui.messageText.setText("Yo I wouldn't go in there if I were you! A monster is on the loose!");
     }

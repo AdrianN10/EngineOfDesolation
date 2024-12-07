@@ -4,22 +4,37 @@ package main;
  * This class handles the transition of scenes
  */
 public class SceneChanger {
+    //create a variable holding the number of events
+    public int numOfScenes = 9;
 
     GameManager gm;
 
     public SceneChanger(GameManager gm) {
-
         this.gm = gm;
     }
 
-    public void showScene1(){
+    /**
+     * This function uses a for loop to render the desired scene
+     * Sets all other scenes to false using a for loop
+     * @param sceneNum the desired scene to be rendered
+     */
+    public void showSpecificScene(int sceneNum) {
+        //render desired scene
+        gm.ui.bgPane[sceneNum].setVisible(true);
 
-        gm.ui.bgPane[1].setVisible(true);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
+        for (int i = 1; i < numOfScenes + 1; i++) {
+            if(i == sceneNum) {
+                continue;
+            } else {
+                gm.ui.bgPane[i].setVisible(false);
+            }
+        }
+
+    }
+
+    public void showScene1(){
+        showSpecificScene(1);
+
         gm.ui.messageText.setText("You are inside your room and you hear a sus sound outside");
 
         gm.stopMusic(gm.currentMusic);
@@ -28,21 +43,13 @@ public class SceneChanger {
     }
     public void showScene2(){
 
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(true);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
+        showSpecificScene(2);
+
         gm.ui.messageText.setText("You are outside your house");
     }
     public void showScene3(){
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(true);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
+        showSpecificScene(3);
+
         gm.ui.messageText.setText("The Engine Monster Stealer gets away and you find yourself lost in the woods");
 
         gm.stopMusic(gm.currentMusic);
@@ -50,12 +57,8 @@ public class SceneChanger {
         gm.playMusic(gm.currentMusic);
     }
     public void showScene4() {
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(true);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
+        showSpecificScene(4);
+
         gm.ui.messageText.setText("You find a tall, dark, and handsome man");
 
         gm.stopMusic(gm.currentMusic);
@@ -63,12 +66,8 @@ public class SceneChanger {
         gm.playMusic(gm.currentMusic);
     }
     public void showScene5() {
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(true);
-        gm.ui.bgPane[6].setVisible(false);
+        showSpecificScene(5);
+
         gm.ui.messageText.setText("The Casino is up ahead but 2 monsters block your way!");
 
         gm.stopMusic(gm.currentMusic);
@@ -76,12 +75,8 @@ public class SceneChanger {
         gm.playMusic(gm.currentMusic);
     }
     public void showScene6() {
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(true);
+        showSpecificScene(6);
+
         gm.ui.messageText.setText("You followed the sound of havoc and made your way to the Casino");
 
         gm.stopMusic(gm.currentMusic);
@@ -89,13 +84,8 @@ public class SceneChanger {
         gm.playMusic(gm.currentMusic);
     }
     public void showScene7() {
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
-        gm.ui.bgPane[7].setVisible(true);
+        showSpecificScene(7);
+
         gm.ui.messageText.setText("You enter the Casino but its too late");
 
         gm.stopMusic(gm.currentMusic);
@@ -103,14 +93,8 @@ public class SceneChanger {
         gm.playMusic(gm.currentMusic);
     }
     public void showScene8() {
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
-        gm.ui.bgPane[7].setVisible(false);
-        gm.ui.bgPane[8].setVisible(true);
+        showSpecificScene(8);
+
         gm.ui.messageText.setText("You catch up to the monster");
 
         gm.stopMusic(gm.currentMusic);
@@ -118,15 +102,7 @@ public class SceneChanger {
         gm.playMusic(gm.currentMusic);
     }
     public void viewLeaderboard() {
-        gm.ui.bgPane[1].setVisible(false);
-        gm.ui.bgPane[2].setVisible(false);
-        gm.ui.bgPane[3].setVisible(false);
-        gm.ui.bgPane[4].setVisible(false);
-        gm.ui.bgPane[5].setVisible(false);
-        gm.ui.bgPane[6].setVisible(false);
-        gm.ui.bgPane[7].setVisible(false);
-        gm.ui.bgPane[8].setVisible(false);
-        gm.ui.bgPane[9].setVisible(true);
+        showSpecificScene(9);
 
         gm.showLeaderboard();
         gm.stopMusic(gm.currentMusic);

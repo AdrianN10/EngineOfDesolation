@@ -26,7 +26,7 @@ public class EngineStealerMonster extends Monster {
         gm.playSE(gm.monsterRoar);
     }
     public void attackSponge(){
-        if(gm.player.hasAk47 == 1 && gm.player.hasPistol ==0){
+        if(gm.player.hasAk47 && !gm.player.hasPistol){
             currentLife -= 5;
             gm.player.playerLife -= 2;
             gm.player.updatePlayerStatus();
@@ -34,7 +34,7 @@ public class EngineStealerMonster extends Monster {
             gm.playSE(gm.ak47shots);
             gm.playSE(gm.monsterRoar);
         }
-        if(gm.player.hasPistol == 1 && gm.player.hasAk47 == 0){
+        if(gm.player.hasPistol && !gm.player.hasAk47){
             currentLife -= 2;
             gm.player.playerLife -= 2;
             gm.player.updatePlayerStatus();
@@ -42,7 +42,7 @@ public class EngineStealerMonster extends Monster {
             gm.playSE(gm.pistolShot);
             gm.playSE(gm.monsterRoar);
         }
-        if(gm.player.hasAk47 == 1 && gm.player.hasPistol == 1){
+        if(gm.player.hasAk47 && gm.player.hasPistol){
             currentLife -= 5;
             gm.player.playerLife -= 2;
             gm.player.updatePlayerStatus();

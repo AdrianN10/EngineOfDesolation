@@ -20,7 +20,7 @@ public class Hondaur extends Monster {
 
     @Override
     public void lookHondaur() {
-        if(currentLife >0) {
+        if(currentLife > 0) {
             gm.ui.messageText.setText("You see a fearsome weakened " + monster+ " ready to rev its engine.");
             gm.playSE(gm.monsterRoar);
         }
@@ -29,9 +29,10 @@ public class Hondaur extends Monster {
             gm.playSE(gm.cannotSound);
         }
     }
+
     @Override
     public void talkHondaur() {
-        if(currentLife >0) {
+        if(currentLife > 0) {
             gm.ui.messageText.setText("The "+monster+" growls at you, its engine roaring.");
             gm.playSE(gm.monsterRoar);
         }
@@ -40,14 +41,15 @@ public class Hondaur extends Monster {
             gm.playSE(gm.cannotSound);
         }
     }
+
     @Override
     public void attackHondaur() {
-
         currentLife--;
-        gm.player.playerLife -=1;
+        gm.player.playerLife--;
         gm.player.updatePlayerStatus();
         gm.ui.messageText.setText("You attack the "+monster+" with your fists! (Its health decreases)");
-        if(gm.player.playerLife <=0){
+
+        if(gm.player.playerLife < 1){
             gm.sChanger.showGameOverScreen(3);
             gm.ui.messageText.setText("You baka! You tested your luck!");
         }
@@ -57,7 +59,7 @@ public class Hondaur extends Monster {
 
         }
 
-        if(currentLife == 0){
+        if(currentLife < 1) {
             if (blood == null) {
                 blood = gm.ui.createObjectAndReturn(3, 340, 100, 200, 233, "blood.png", "", "", "", "", "", "");
             }
@@ -71,7 +73,7 @@ public class Hondaur extends Monster {
             anthony.setVisible(true);
 
             gm.ui.messageText.setText("The " + monster+ " has been defeated!");
-        }else if (currentLife > 0) {
+        }else {
             // Hide anthony and blood while the monster is still alive
             if (anthony != null) anthony.setVisible(false);
             if (blood != null) blood.setVisible(false);
@@ -104,6 +106,8 @@ public class Hondaur extends Monster {
         gm.ui.messageText.setText("*You grasp his cheek. He sheds a tear* My boy Denzel should be up ahead!");
     }
 
+
+    //No need to write all these empty overrides. Just make these methods concrete in their respective monster clases. Why is code for Wheeler Monster in Hondaur class?
     @Override
     public void lookTheodoor() {}
     @Override

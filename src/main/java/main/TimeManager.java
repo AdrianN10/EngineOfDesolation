@@ -10,6 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class TimeManager {
+    //TODO use log4j2 for exception handling. For larger applications, it is usually better to use a logger than System.err.println()
+
     private static final String BINARY_FILE_NAME = "fastest_times.dat";
     private static final String LEADERBOARD_FILE_NAME = "leaderboard.csv";
     public ArrayList<Long> fastestTimes = new ArrayList<>();
@@ -92,7 +94,9 @@ public class TimeManager {
             System.err.println("Error loading leaderboard: " + e.getMessage());
         }
     }
-    public class TimeUtils {
+
+    //made TimeUtils static
+    public static class TimeUtils {
         public static String formatTime(long millis) {
             long seconds = millis / 1000;
             long minutes = seconds / 60;
@@ -107,4 +111,10 @@ public class TimeManager {
             return (minutes * 60 + seconds) * 1000; // Convert to milliseconds
         }
     }
+
+    //TODO create a method to reset the leaderboard
+
+    //TODO use a multithread to show the user's time move down the ranks of a leaderboard
+
+    //TODO implement a way to add the date to when a leaderboard entry is made
 }

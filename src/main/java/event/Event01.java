@@ -41,8 +41,8 @@ public class Event01 {
         gm.ui.messageText.setText("This is a flashlight");
     }
     public void grabFlashlight() {
-        if(gm.player.hasFlashlight == 0) {
-            gm.player.hasFlashlight = 1;
+        if(!gm.player.hasFlashlight) {
+            gm.player.hasFlashlight = true;
             gm.ui.messageText.setText("(You obtained a flashlight)");
 
             gm.player.updatePlayerStatus();
@@ -55,8 +55,8 @@ public class Event01 {
 
     }
     public void restFlashlight() {
-        if(gm.player.hasFlashlight == 1) {
-            gm.player.hasFlashlight = 0;
+        if(gm.player.hasFlashlight) {
+            gm.player.hasFlashlight = false;
             gm.ui.messageText.setText("*You rest the flashlight back on the bed*");
 
             gm.player.updatePlayerStatus();
