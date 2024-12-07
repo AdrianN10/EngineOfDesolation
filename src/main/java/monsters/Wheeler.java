@@ -6,11 +6,14 @@ import main.GameManager;
 public class Wheeler extends Monster {
 
     private ImageView blood;   // Reference for blood
+    // TODO: Consider making blood final if it's not reassigned
 
     public Wheeler(GameManager gm) {
         super(gm,4,4, "Wheeler", 2);
     }
+    // TODO: Consider adding validation for the parameters
     public void addToScene() {
+        // TODO: Consider extracting magic numbers (50, 95, 200, 283) to constants
 
         gm.ui.createObject(5, 50,95,200,283,"wheel.png",
                 "Look","Talk", "Attack", "lookWheeler",
@@ -19,6 +22,7 @@ public class Wheeler extends Monster {
 
     @Override
     public void lookWheeler() {
+        // TODO: Consider using a switch statement or enum for different monster states
         if(currentLife >0) {
             gm.ui.messageText.setText("You see the " + monster+ " ready to run you over.");
             gm.playSE(gm.monsterRoar);
@@ -31,6 +35,7 @@ public class Wheeler extends Monster {
 
     @Override
     public void talkWheeler() {
+        // TODO: Consider combining this method with lookWheeler to reduce code duplication
         if(currentLife >0) {
             gm.ui.messageText.setText(monster+" roars at you! (He is scared of the glock).");
             gm.playSE(gm.monsterRoar);
@@ -43,11 +48,17 @@ public class Wheeler extends Monster {
 
     @Override
     public void attackWheeler() {
+        // TODO: Consider extracting the attack logic to a separate method
         currentLife-=2;
         gm.player.playerLife -=1;
         gm.player.updatePlayerStatus();
         gm.ui.messageText.setText("You shoot "+monster+" with your glock! (Its health decreases by 2)");
-        if(gm.player.playerLife <=0){
+        // TODO: Consider extracting the player death check to a separate method
+
+        if (gm.player.playerLife <=0) {
+
+            // Duplicate if statement
+
             gm.sChanger.showGameOverScreen(5);
             gm.ui.messageText.setText("You baka! You tested your luck!");
         }
@@ -106,4 +117,8 @@ public class Wheeler extends Monster {
     public void talkTheodoor() {}
     @Override
     public void attackTheodoor() {}
+
+    // Consider adding documentation for public methods
+    // Consider implementing a more flexible system for monster interactions
+    // Consider adding unit tests for this class
 }

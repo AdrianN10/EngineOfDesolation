@@ -8,10 +8,14 @@ public class Hondaur extends Monster {
     private ImageView anthony; // Reference for anthony
     private ImageView blood;   // Reference for blood
 
+    // TODO: Consider making these ImageViews final if they're not reassigned
+
     public Hondaur(GameManager gm) {
         super(gm,4,4, "Hondaur", 1);
+        // TODO: Consider adding validation for the parameters
     }
     public void addToScene() {
+        // TODO: Consider extracting magic numbers (300, 100, 200, 283) to constants
 
         gm.ui.createObject(3, 300,100,200,283,"Hondaur_2.png",
                 "Look","Talk", "Attack", "lookHondaur",
@@ -20,6 +24,7 @@ public class Hondaur extends Monster {
 
     @Override
     public void lookHondaur() {
+        // TODO: Consider using a switch statement or enum for different monster states
         if(currentLife >0) {
             gm.ui.messageText.setText("You see a fearsome weakened " + monster+ " ready to rev its engine.");
             gm.playSE(gm.monsterRoar);
@@ -31,6 +36,7 @@ public class Hondaur extends Monster {
     }
     @Override
     public void talkHondaur() {
+        // TODO: Consider combining this method with lookHondaur to reduce code duplication
         if(currentLife >0) {
             gm.ui.messageText.setText("The "+monster+" growls at you, its engine roaring.");
             gm.playSE(gm.monsterRoar);
@@ -42,11 +48,14 @@ public class Hondaur extends Monster {
     }
     @Override
     public void attackHondaur() {
+        // TODO: Consider extracting the attack logic to a separate method
 
         currentLife--;
         gm.player.playerLife -=1;
         gm.player.updatePlayerStatus();
         gm.ui.messageText.setText("You attack the "+monster+" with your fists! (Its health decreases)");
+
+        // TODO: Consider extracting the player death check to a separate method
         if(gm.player.playerLife <=0){
             gm.sChanger.showGameOverScreen(3);
             gm.ui.messageText.setText("You baka! You tested your luck!");
@@ -122,4 +131,7 @@ public class Hondaur extends Monster {
     public void talkSponge() {}
     @Override public void followSponge() {}
 
+    // Consider adding documentation for public methods
+    // Consider implementing a more flexible system for monster interactions
+    // Consider adding unit tests for this class
 }

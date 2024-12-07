@@ -17,6 +17,9 @@ import java.util.List;
 
 public class GameManager extends Application {
 
+    // TODO: Consider organizing related fields into separate classes or enums
+    // TODO: Consider making fields private where appropriate and providing getter methods
+
     ActionHandler aHandler = new ActionHandler(this);
     public UI ui = new UI(this);
     public Player player = new Player(this);
@@ -26,6 +29,8 @@ public class GameManager extends Application {
     public AnimationTimer gameTimer;
     public long elapsedTime;
     private TimeManager timeManager;
+
+    // TODO: Consider using a map or list to manage events and monsters
 
     public Event01 ev1 = new Event01(this);
     public Event02 ev2 = new Event02(this);
@@ -41,7 +46,11 @@ public class GameManager extends Application {
     Music music = new Music();
     SoundEffect se = new SoundEffect();
 
+    // Ev3 is never used
+
     //SOUND
+    // TODO: Consider using an enum or configuration file for sound resources
+
      public URL mainTheme = getClass().getClassLoader().getResource("mainTheme.wav");
     public URL monsterTheme = getClass().getClassLoader().getResource("monsterTheme.wav");
     public URL casinoMusic = getClass().getClassLoader().getResource("casinoMusic.wav");
@@ -76,24 +85,29 @@ public class GameManager extends Application {
 
     }
 
+    // TODO: Consider adding a method to manage game state (e.g., pausing, resuming)
+
     public void playSE(URL url) {
+        // TODO: Add null check for url
 
         se.setFile(url);
         se.play(url);
     }
     public void playMusic(URL url){
+        // TODO: Add null check for url
 
         music.setFile(url);
         music.play(url);
         music.loop(url);
     }
     public void stopMusic(URL url){
-
+        // TODO: Add null check for url
         music.stop(url);
     }
 
 
     public void startGameTimer() {
+        // TODO: Consider resetting elapsedTime here
         startTime = System.nanoTime();
         gameTimer = new AnimationTimer() {
             @Override
@@ -117,6 +131,7 @@ public class GameManager extends Application {
     }
 
     public void updateTimerUI() {
+        // TODO: Consider moving this formatting logic to a utility class
         // Format the time as minutes and seconds
         long seconds = elapsedTime / 1000;
         long minutes = seconds / 60;
@@ -129,4 +144,8 @@ public class GameManager extends Application {
         List<String> leaderboard = timeManager.getFormattedFastestTimes();
         ui.displayLeaderboard(leaderboard); // Add a method in UI to display the leaderboard
     }
+    // Consider adding methods for game state management (e.g., startNewGame, endGame)
+    // Consider adding methods for handling player actions and game events
+    // Consider implementing a logging system for debugging and tracking game events
+    // Consider adding unit tests for game logic
 }
