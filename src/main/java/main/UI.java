@@ -42,6 +42,8 @@ public class UI {
     //GAME OVER UI
     public Label titleLabel;
     public Button restartButton;
+    private int width;
+    private int height;
 
     public UI(GameManager gm) {
         this.gm = gm;
@@ -83,7 +85,7 @@ public class UI {
         //START BUTTON
         Button startButton = new Button("Start");
         startButton.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 24px; -fx-background-color: white;");
-        startButton.setLayoutX((800 - 150) / 2); // Center horizontally (approximate for button width)
+        startButton.setLayoutX((double) (800 - 150) / 2); // Center horizontally (approximate for button width)
         startButton.setLayoutY(400);  // Center vertically (approximate for button height)
 
         // Start button functionality
@@ -229,6 +231,8 @@ public class UI {
     }
 
     public void createArrowButton(int bgNum, int x, int y, int width, int height, String arrowFileName, String command) {
+        this.width = width;
+        this.height = height;
         // Arrow Button Image
         Image arrowImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(arrowFileName)));
         Button arrowButton = new Button();

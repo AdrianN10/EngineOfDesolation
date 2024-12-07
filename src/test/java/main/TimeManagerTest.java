@@ -104,4 +104,14 @@ class TimeManagerTest {
         // Verify that saveLeaderboard was called
         verify(mockedTimeManager, times(1)).saveLeaderboard();
     }
+// Add test for edge cases (e.g., adding more than 10 times)
+// Test behavior when adding duplicate times
+// Add test for loading from an empty file
+// Test exception handling for file I/O operations
+// Add test for time formatting with hours (e.g., "01:30:45")
+// Test concurrent access to TimeManager methods
+// Add integration test with actual file I/O
+// Test performance with a large number of times
+// Add test for clearing all times
+// Test behavior when adding invalid times (e.g., negative values)
 }

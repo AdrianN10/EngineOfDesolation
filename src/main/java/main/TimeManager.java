@@ -2,6 +2,7 @@ package main;
 
 /**
  * This class handles the leaderboard times
+ * TODO: Consider adding more detailed class description
  */
 
 import java.io.*;
@@ -13,6 +14,7 @@ public class TimeManager {
     private static final String BINARY_FILE_NAME = "fastest_times.dat";
     private static final String LEADERBOARD_FILE_NAME = "leaderboard.csv";
     public ArrayList<Long> fastestTimes = new ArrayList<>();
+    // TODO: Consider making fastestTimes private and providing a getter method
 
     public TimeManager() {
         loadTimes();
@@ -35,7 +37,7 @@ public class TimeManager {
         fastestTimes.add(time);
         Collections.sort(fastestTimes);
         if (fastestTimes.size() > 10) {
-            fastestTimes.remove(fastestTimes.size() - 1);
+            fastestTimes.removeLast();
         }
         saveTimes();
         saveLeaderboard(); // Save to leaderboard file as well
@@ -92,7 +94,7 @@ public class TimeManager {
             System.err.println("Error loading leaderboard: " + e.getMessage());
         }
     }
-    public class TimeUtils {
+    public static class TimeUtils {
         public static String formatTime(long millis) {
             long seconds = millis / 1000;
             long minutes = seconds / 60;

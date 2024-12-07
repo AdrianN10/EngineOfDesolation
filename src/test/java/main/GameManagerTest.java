@@ -86,4 +86,14 @@ class GameManagerTest {
 
         assertNotNull(gameManager.gameTimer);
     }
+    // Add test for updateTimerUI method
+    // Test showLeaderboard method
+    // Add test for game state changes (e.g., starting a new game, ending a game)
+    // Test interaction between GameManager and Player class
+    // Add tests for monster interactions (e.g., player attacking a monster)
+    // Test scene changing functionality
+    // Add tests for handling different sound resources
+    // Test error handling for missing or corrupt resource files
+    // Add integration tests for GameManager with actual UI components
+    // Test performance under high load (e.g., rapid timer updates)
 }
