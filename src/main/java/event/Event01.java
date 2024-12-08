@@ -30,6 +30,7 @@ public class Event01 {
         gm.ui.messageText.setText("Did you hear that noise outside son?");
         gm.playSE(gm.engineNoise);
     }
+
     public void restJeramiah() {
 
         if(gm.player.playerLife != gm.player.playerMaxLife) {
