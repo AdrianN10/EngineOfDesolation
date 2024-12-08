@@ -65,6 +65,8 @@ public class GameManager extends Application {
         launch(args);
     }
 
+
+
     @Override
     public void start(Stage primaryStage) {
 
@@ -75,35 +77,66 @@ public class GameManager extends Application {
         timeManager = new TimeManager();
 
     }
-
-    public void playSE(URL url) {
-
-        se.setFile(url);
-        se.play(url);
+//Graceful Shutdown of the Application to handle potential exceptions during application shutdown
+    @Override
+    public void stop() {
+        try {
+            if (gameTimer != null) {
+                gameTimer.stop();
+            }
+            music.stop(currentMusic);
+        } catch (Exception e) {
+            System.err.println("Error during application shutdown: " + e.getMessage());
+        } finally {
+            System.out.println("Application stopped gracefully.");
+        }
     }
-    public void playMusic(URL url){
 
-        music.setFile(url);
-        music.play(url);
-        music.loop(url);
+    //Add try-catch blocks with meaningful error messages to handle potential issues.
+    public void playSE(URL url) {
+        try {
+            if (url == null) {
+                throw new IllegalArgumentException("Sound effect URL is null");
+            }
+            se.setFile(url);
+            se.play(url);
+        } catch (Exception e) {
+            System.err.println("Error playing sound effect: " + e.getMessage());
+        }
+    }
+//Add try-catch blocks with meaningful error messages to handle potential issues.
+    public void playMusic(URL url) {
+        try {
+            music.setFile(url);
+            music.play(url);
+            music.loop(url);
+        } catch (Exception e) {
+            System.err.println("Error playing music: " + e.getMessage());
+        }
     }
     public void stopMusic(URL url){
 
         music.stop(url);
     }
 
-
+// Add try-catch blocks if there is an issue with starting the timer, handle it to avoid affecting game flow.
     public void startGameTimer() {
-        startTime = System.nanoTime();
-        gameTimer = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                elapsedTime = (now - startTime) / 1_000_000; // Convert to milliseconds
-                updateTimerUI();
-            }
-        };
-        gameTimer.start();
+        try {
+            startTime = System.nanoTime();
+            gameTimer = new AnimationTimer() {
+                @Override
+                public void handle(long now) {
+                    elapsedTime = (now - startTime) / 1_000_000; // Convert to milliseconds
+                    updateTimerUI();
+                }
+            };
+            gameTimer.start();
+        } catch (Exception e) {
+            System.err.println("Error starting the game timer: " + e.getMessage());
+        }
     }
+
+
 
     public void stopGameTimer() {
         if (gameTimer != null) {
@@ -116,17 +149,29 @@ public class GameManager extends Application {
         }
     }
 
+    //Add try-catch blocks with meaningful error messages to handle potential issues.
     public void updateTimerUI() {
-        // Format the time as minutes and seconds
-        long seconds = elapsedTime / 1000;
-        long minutes = seconds / 60;
-        seconds %= 60;
+        try {
+            if (ui.timerLabel == null) {
+                throw new NullPointerException("Timer label is not initialized in the UI");
+            }
 
-        // Display the timer on the UI
-        ui.timerLabel.setText(String.format("%02d:%02d", minutes, seconds));
+            long seconds = elapsedTime / 1000;
+            long minutes = seconds / 60;
+            seconds %= 60;
+
+            // Update the timer label
+            ui.timerLabel.setText(String.format("%02d:%02d", minutes, seconds));
+        } catch (Exception e) {
+            System.err.println("Error updating timer UI: " + e.getMessage());
+        }
     }
+
     public void showLeaderboard() {
         List<String> leaderboard = timeManager.getFormattedFastestTimes();
         ui.displayLeaderboard(leaderboard); // Add a method in UI to display the leaderboard
     }
+
+
+
 }
