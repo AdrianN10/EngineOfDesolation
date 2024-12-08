@@ -30,6 +30,11 @@ public class Player {
 
         updatePlayerStatus();
     }
+
+    /**
+     * Updates the player's status by adjusting the UI elements, such as life icons and item labels,
+     * based on the player's current attributes.
+     */
     public void updatePlayerStatus() {
 
         int i = 0;

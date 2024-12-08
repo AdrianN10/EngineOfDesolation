@@ -65,6 +65,12 @@ public class GameManager extends Application {
         launch(args);
     }
 
+    /**
+     * Starts the game by setting up the game scene and initializing the timer.
+     *
+     * @param primaryStage The primary stage for the JavaFX application.
+     */
+
     @Override
     public void start(Stage primaryStage) {
 

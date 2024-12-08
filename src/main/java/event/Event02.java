@@ -13,6 +13,7 @@ public class Event02 {
     public void search1Honda() {
         gm.ui.messageText.setText("Nothing sus here");
     }
+    // TODO: Log the search action for debugging or saving player actions.
     public void search2Honda() {
         gm.ui.messageText.setText("OH MY GYAT MY ENGINE IS MISSING");
     }
