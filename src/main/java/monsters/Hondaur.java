@@ -13,7 +13,7 @@ public class Hondaur extends Monster {
     }
     public void addToScene() {
 
-        gm.ui.createObject(3, 300,100,200,283,"Hondaur_2.png",
+        gm.ui.createObject(3, 300,100,200,283, "Monsters/Hondaur_2.png",
                 "Look","Talk", "Attack", "lookHondaur",
                 "talkHondaur", "attackHondaur");
     }
@@ -59,10 +59,10 @@ public class Hondaur extends Monster {
 
         if(currentLife == 0){
             if (blood == null) {
-                blood = gm.ui.createObjectAndReturn(3, 340, 100, 200, 233, "blood.png", "", "", "", "", "", "");
+                blood = gm.ui.createObjectAndReturn(3, 340, 100, 200, 233, "Monsters/blood.png", "", "", "", "", "", "");
             }
             if (anthony == null) {
-                anthony = gm.ui.createObjectAndReturn(3, 100, 100, 200, 250, "anthony.png",
+                anthony = gm.ui.createObjectAndReturn(3, 100, 100, 200, 250, "Character/anthony.png",
                         "Look", "Talk", "Touch", "lookAnthony", "talkAnthony", "touchAnthony");
             }
 

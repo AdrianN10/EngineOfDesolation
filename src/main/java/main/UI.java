@@ -60,7 +60,7 @@ public class UI {
 
         // Background Image
         ImageView backgroundImage = new ImageView(
-                new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("titleScreen.png")))
+                new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Background/titleScreen.png")))
         );
         backgroundImage.setFitWidth(800);
         backgroundImage.setFitHeight(600);
@@ -252,7 +252,7 @@ public class UI {
         background.setFill(Color.BLACK); // Set background color to blue
 
         // Load the life icon image
-        Image lifeImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("heart.png")));
+        Image lifeImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("GeneralStuff/heart.png")));
 
         // Loop to create and add life icons to the lifePanel
         for (int i = 0; i < 5; i++) { // 5 life icons
@@ -271,21 +271,21 @@ public class UI {
         inventoryPanel.setStyle("-fx-background-color: black;");
 
         // Initialize and assign flashlightLabel
-        Image flashlightImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("flashlightIcon.png")));
+        Image flashlightImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Flashlight/flashlightIcon.png")));
         flashlightLabel = new Label(); // Assign to flashlightLabel
         flashlightLabel.setGraphic(new ImageView(flashlightImage));
         flashlightLabel.setVisible(false); // Hide initially
         inventoryPanel.getChildren().add(flashlightLabel);
 
         // Initialize and assign pistolLabel
-        Image pistolImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("pistol.png")));
+        Image pistolImage = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Weapon/pistol.png")));
         pistolLabel = new Label(); // Assign to pistolLabel
         pistolLabel.setGraphic(new ImageView(pistolImage));
         pistolLabel.setVisible(false); // Hide initially
         inventoryPanel.getChildren().add(pistolLabel);
 
         // Initialize and assign ak47Label
-        Image ak47Image = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("ak47.png")));
+        Image ak47Image = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Weapon/ak47.png")));
         ak47Label = new Label(); // Assign to ak47Label
         ak47Label.setGraphic(new ImageView(ak47Image));
         ak47Label.setVisible(false); // Hide initially
@@ -339,61 +339,61 @@ public class UI {
 
     public void generateScene() {
         // SCENE 1
-        createBackground(1, "bedroom.png");
-        createObject(1, 100, 100, 200, 250, "jeramiah.png",
+        createBackground(1, "Background/bedroom.png");
+        createObject(1, 100, 100, 200, 250, "Character/jeramiah.png",
                 "Look", "Talk", "Rest",
                 "lookJeramiah", "talkJeramiah", "restJeramiah");
-        createObject(1, 500, 230, 50, 50, "flashlight.png",
+        createObject(1, 500, 230, 50, 50, "Flashlight/flashlight.png",
                 "Look", "Grab", "Rest",
                 "lookFlashlight", "grabFlashlight", "restFlashlight");
-        createArrowButton(1, 650, 150, 50, 50, "rightArrow50x50.png", "goScene2");
+        createArrowButton(1, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goScene2");
         // SCENE 2
-        createBackground(2, "driveway700x350.png");
-        createObject(2, 350, 230, 200, 151, "honda200x151.png",
+        createBackground(2, "Background/driveway700x350.png");
+        createObject(2, 350, 230, 200, 151, "GeneralStuff/honda200x151.png",
                 "Search Inside", "Search hood", "Rest",
                 "search1Honda", "search2Honda", "restHonda");
         // SCENE 3
-        createBackground(3,"woods.png");
+        createBackground(3, "Background/woods.png");
         gm.hondaur.addToScene();
         gm.engineStealerMonster.addToScene3();
-        createArrowButton(3, 650, 150, 50, 50, "rightArrow50x50.png", "goScene4");
+        createArrowButton(3, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goScene4");
         // SCENE 4
-        createBackground(4,"campfire.png");
-        createObject(4, 100,100, 200,250,"denzel.png"
+        createBackground(4, "Background/campfire.png");
+        createObject(4, 100,100, 200,250, "Character/denzel.png"
                 , "Look", "Talk","Rest","lookDenzel",
                 "talkDenzel","restDenzel");
-        createArrowButton(4, 650, 150, 50, 50, "rightArrow50x50.png", "goScene5");
+        createArrowButton(4, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goScene5");
         // SCENE 5
-        createBackground(5,"woods2.png");
-        createObject(5, 250,150, 200,200,"hondaTrunk.png"
+        createBackground(5, "Background/woods2.png");
+        createObject(5, 250,150, 200,200, "Monsters/hondaTrunk.png"
                 , "Look", "Talk","Kill","lookHondaTrunk",
                 "talkHondaTrunk","killHondaTrunk");
-        createArrowButton(5, 650, 150, 50, 50, "rightArrow50x50.png", "goScene6");
+        createArrowButton(5, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goScene6");
         gm.theodoor.addToScene();
         gm.wheeler.addToScene();
         // SCENE 6
-        createBackground(6, "casinoEntrance.png");
-        createObject(6, 80, 140, 200, 250, "brandon.png",
+        createBackground(6, "Background/casinoEntrance.png");
+        createObject(6, 80, 140, 200, 250, "Character/brandon.png",
                 "Look", "Talk", "Rest",
                 "lookBrandon", "talkBrandon", "restBrandon");
-        createArrowButton(6, 650, 150, 50, 50, "rightArrow50x50.png", "goScene7");
+        createArrowButton(6, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goScene7");
         // SCENE 7
-        createBackground(7, "casino.png");
-        createObject(7, 200, 130, 200, 224, "julian.png",
+        createBackground(7, "Background/casino.png");
+        createObject(7, 200, 130, 200, 224, "Character/julian.png",
                 "Look", "Talk", "Hold",
                 "lookJulian", "talkJulian", "holdJulian");
-        createObject(7, 350, 30, 300, 354, "slotMachine.png",
+        createObject(7, 350, 30, 300, 354, "Background/slotMachine.png",
                 "Look", "Talk", "Spin",
                 "lookSlotMachine", "talkSlotMachine", "spinSlotMachine");
-        createObject(7, 80, 50, 225, 300, "adrian.png",
+        createObject(7, 80, 50, 225, 300, "Character/adrian.png",
                 "Look", "Talk", "Thank",
                 "lookAdrian", "talkAdrian", "thankAdrian");
-        createArrowButton(7, 650, 150, 50, 50, "rightArrow50x50.png", "goScene8");
+        createArrowButton(7, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goScene8");
         // SCENE 8
-        createBackground(8, "cityStreet.png");
+        createBackground(8, "Background/cityStreet.png");
         gm.engineStealerMonster.addToScene8();
-        createArrowButton(8, 650, 150, 50, 50, "rightArrow50x50.png", "goLeaderboard");
+        createArrowButton(8, 650, 150, 50, 50, "GeneralStuff/rightArrow50x50.png", "goLeaderboard");
         // LEADERBOARD SCREEN
-        createBackground(9,"bedroom.png");
+        createBackground(9, "Background/bedroom.png");
     }
 }

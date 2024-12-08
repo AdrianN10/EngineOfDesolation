@@ -12,7 +12,7 @@ public class Theodoor extends Monster {
     }
     public void addToScene() {
 
-        gm.ui.createObject(5, 450,95,200,283,"theodoor.png",
+        gm.ui.createObject(5, 450,95,200,283, "Monsters/theodoor.png",
                 "Look","Talk", "Attack", "lookTheodoor",
                 "talkTheodoor", "attackTheodoor");
     }
@@ -61,7 +61,7 @@ public class Theodoor extends Monster {
 
         if(currentLife == 0){
             if (blood == null) {
-                blood = gm.ui.createObjectAndReturn(5, 450, 95, 200, 233, "blood.png", "", "", "", "", "", "");
+                blood = gm.ui.createObjectAndReturn(5, 450, 95, 200, 233, "Monsters/blood.png", "", "", "", "", "", "");
             }
 
             // Make them visible
