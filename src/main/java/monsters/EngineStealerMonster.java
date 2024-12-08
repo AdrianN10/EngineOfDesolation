@@ -4,7 +4,7 @@ import javafx.scene.image.ImageView;
 import main.GameManager;
 
 public class EngineStealerMonster extends Monster {
-
+//javadox are needed for the monsters
     private ImageView blood;
 
     public EngineStealerMonster(GameManager gm) {
