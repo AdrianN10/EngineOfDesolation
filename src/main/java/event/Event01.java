@@ -6,10 +6,19 @@ package event;
 
 import main.GameManager;
 
+/**
+ * Handles the interactions for specific scenes and objects in the game.
+ * This class includes events related to Jeremiah and a flashlight.
+ */
 public class Event01 {
 
     GameManager gm;
 
+    /**
+     * Constructor for Event01
+     *
+     * @param gm The GameManager instance controlling the game and UI.
+     */
     public Event01(GameManager gm) {
         this.gm = gm;
     }
@@ -21,6 +30,7 @@ public class Event01 {
         gm.ui.messageText.setText("Did you hear that noise outside son?");
         gm.playSE(gm.engineNoise);
     }
+
     public void restJeramiah() {
 
         if(gm.player.playerLife != gm.player.playerMaxLife) {
