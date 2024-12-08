@@ -397,3 +397,5 @@ public class UI {
         createBackground(9,"bedroom.png");
     }
 }
+
+// Todo: These blocks of code feel a bit crowded so maybe add some spaces so it would be easier to read

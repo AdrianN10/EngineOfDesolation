@@ -123,3 +123,4 @@ public class Hondaur extends Monster {
     @Override public void followSponge() {}
 
 }
+// Todo: I would add more javadoc notes for less confusion

@@ -39,3 +39,4 @@ public abstract class Monster {
 
 
 }
+// Todo: I would add javadoc notes for less confusion
