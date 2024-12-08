@@ -46,6 +46,7 @@ public class TimeManager {
             oos.writeObject(fastestTimes);
         } catch (IOException e) {
             System.err.println("Error saving times: " + e.getMessage());
+            // TODO: Add error recovery mechanism (e.g., alert the user).
         }
     }
 
@@ -70,6 +71,7 @@ public class TimeManager {
             }
         } catch (IOException e) {
             System.err.println("Error saving leaderboard: " + e.getMessage());
+            // TODO: Add a feature to alert the user if the leaderboard fails to save.
         }
     }
 

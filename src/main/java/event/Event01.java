@@ -15,9 +15,11 @@ public class Event01 {
     }
 
     public void lookJeramiah() {
+        // TODO: Add error handling to check if gm or gm.ui is null before using it.
         gm.ui.messageText.setText("This is your tall handsome roommate Jeramiah. (He works on cars. Specifically Hondas)");
     }
     public void talkJeramiah() {
+        // TODO: Add a try/catch block to handle any potential errors during sound playback.
         gm.ui.messageText.setText("Did you hear that noise outside son?");
         gm.playSE(gm.engineNoise);
     }
@@ -55,6 +57,7 @@ public class Event01 {
 
     }
     public void restFlashlight() {
+        // TODO: Display a confirmation dialog before dropping the flashlight.
         if(gm.player.hasFlashlight == 1) {
             gm.player.hasFlashlight = 0;
             gm.ui.messageText.setText("*You rest the flashlight back on the bed*");

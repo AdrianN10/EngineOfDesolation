@@ -14,15 +14,30 @@ public class ActionHandler implements EventHandler<ActionEvent> {
         this.gm = gm;
     }
 
+    /**
+     * Handles the action event triggered by a button press. This method identifies
+     * which button was clicked and passes the information to the appropriate game method.
+     *
+     * @param e The ActionEvent triggered by the button click.
+     */
+
     @Override
     public void handle(ActionEvent e) {
         String yourChoice = ((javafx.scene.control.Button) e.getSource()).getText();
         handleAction(yourChoice);
     }
 
+    /**
+     * Executes a specific game action based on the user's choice from the button click.
+     * This method will change scenes, invoke event logic, or provide feedback based on the action.
+     *
+     * @param yourChoice The label text of the clicked button that corresponds to a game action.
+     */
+
     // handles the action commands
     public void handleAction(String yourChoice) {
         switch (yourChoice) {
+            // TODO: Add more actions as new game features are implemented.
             // SCENE 1
             case "lookJeramiah":
                 gm.ev1.lookJeramiah();
@@ -30,6 +45,7 @@ public class ActionHandler implements EventHandler<ActionEvent> {
             case "talkJeramiah":
                 gm.ev1.talkJeramiah();
                 break;
+            // TODO: Document each action method to explain its purpose in the game.
             case "restJeramiah":
                 gm.ev1.restJeramiah();
                 break;
