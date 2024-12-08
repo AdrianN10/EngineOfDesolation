@@ -130,3 +130,4 @@ public class GameManager extends Application {
         ui.displayLeaderboard(leaderboard); // Add a method in UI to display the leaderboard
     }
 }
+// Todo: Organize your pictures

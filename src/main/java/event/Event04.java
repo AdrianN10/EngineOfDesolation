@@ -40,3 +40,4 @@ public class Event04 {
         }
     }
 }
+// Todo: I would add javadoc notes for less confusion
