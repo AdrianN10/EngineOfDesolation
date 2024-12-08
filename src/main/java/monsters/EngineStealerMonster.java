@@ -12,12 +12,12 @@ public class EngineStealerMonster extends Monster {
     }
     public void addToScene3() {
 
-        gm.ui.createObject(2, 600,250,50,38,"sponge.png",
+        gm.ui.createObject(2, 600,250,50,38, "Monsters/sponge.png",
                 "Look","Talk", "Follow", "lookSponge",
                 "talkSponge", "followSponge");
     }
     public void addToScene8() {
-        gm.ui.createObject(8,200,100,350, 263,"spongeFinalBoss.png",
+        gm.ui.createObject(8,200,100,350, 263, "Monsters/spongeFinalBoss.png",
                 "Talk","Attack","Let Live","talkSponge2","attackSponge", "letLiveSponge");
     }
 
@@ -72,7 +72,7 @@ public class EngineStealerMonster extends Monster {
 
         if(currentLife == 0){
             if (blood == null) {
-                blood = gm.ui.createObjectAndReturn(8, 200, 100, 200, 233, "blood.png", "", "", "", "", "", "");
+                blood = gm.ui.createObjectAndReturn(8, 200, 100, 200, 233, "Monsters/blood.png", "", "", "", "", "", "");
             }
 
             // Make them visible

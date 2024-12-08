@@ -58,7 +58,7 @@ public class Event06 {
             gm.ui.messageText.setText("(Your life is full)");
             gm.playSE(gm.cannotSound);
             if (denzel == null){
-                denzel = gm.ui.createObjectAndReturn(6, 450, 110, 200, 250, "denzel.png",
+                denzel = gm.ui.createObjectAndReturn(6, 450, 110, 200, 250, "Character/denzel.png",
                         "Look", "Talk", "Play", "lookDenzel2", "talkDenzel2", "playDenzel");
                 denzel.setVisible(true);
             }

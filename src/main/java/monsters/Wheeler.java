@@ -12,7 +12,7 @@ public class Wheeler extends Monster {
     }
     public void addToScene() {
 
-        gm.ui.createObject(5, 50,95,200,283,"wheel.png",
+        gm.ui.createObject(5, 50,95,200,283, "Monsters/wheel.png",
                 "Look","Talk", "Attack", "lookWheeler",
                 "talkWheeler", "attackWheeler");
     }
@@ -61,7 +61,7 @@ public class Wheeler extends Monster {
 
         if(currentLife == 0){
             if (blood == null) {
-                blood = gm.ui.createObjectAndReturn(5, 50, 95, 200, 233, "blood.png", "", "", "", "", "", "");
+                blood = gm.ui.createObjectAndReturn(5, 50, 95, 200, 233, "Monsters/blood.png", "", "", "", "", "", "");
             }
 
             // Make them visible

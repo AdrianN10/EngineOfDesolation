@@ -42,22 +42,22 @@ public class GameManager extends Application {
     SoundEffect se = new SoundEffect();
 
     //SOUND
-     public URL mainTheme = getClass().getClassLoader().getResource("mainTheme.wav");
-    public URL monsterTheme = getClass().getClassLoader().getResource("monsterTheme.wav");
-    public URL casinoMusic = getClass().getClassLoader().getResource("casinoMusic.wav");
-    public URL slotWin = getClass().getClassLoader().getResource("slotWin.wav");
-    public URL monsterHit = getClass().getClassLoader().getResource("monsterHit.wav");
-    public URL monsterRoar = getClass().getClassLoader().getResource("monsterRoar.wav");
+     public URL mainTheme = getClass().getClassLoader().getResource("GeneralStuff/mainTheme.wav");
+    public URL monsterTheme = getClass().getClassLoader().getResource("Monsters/monsterTheme.wav");
+    public URL casinoMusic = getClass().getClassLoader().getResource("Background/casinoMusic.wav");
+    public URL slotWin = getClass().getClassLoader().getResource("Background/slotWin.wav");
+    public URL monsterHit = getClass().getClassLoader().getResource("Monsters/monsterHit.wav");
+    public URL monsterRoar = getClass().getClassLoader().getResource("Monsters/monsterRoar.wav");
     public URL ak47shots = getClass().getClassLoader().getResource("ak47shots.wav");
-    public URL pistolShot = getClass().getClassLoader().getResource("pistolShot.wav");
-    public URL reload = getClass().getClassLoader().getResource("reload.wav");
-    public URL flashlightSwitch = getClass().getClassLoader().getResource("flashlightSwitch.wav");
-    public URL heal = getClass().getClassLoader().getResource("heal.wav");
-    public URL awSound = getClass().getClassLoader().getResource("awSound.wav");
-    public URL gameOverSound = getClass().getClassLoader().getResource("gameOverSound.wav");
-    public URL gameOverVoice = getClass().getClassLoader().getResource("gameOverVoice.wav");
-    public URL cannotSound = getClass().getClassLoader().getResource("cannotSound.wav");
-    public URL engineNoise = getClass().getClassLoader().getResource("engineNoise.wav");
+    public URL pistolShot = getClass().getClassLoader().getResource("Weapon/pistolShot.wav");
+    public URL reload = getClass().getClassLoader().getResource("Weapon/reload.wav");
+    public URL flashlightSwitch = getClass().getClassLoader().getResource("Flashlight/flashlightSwitch.wav");
+    public URL heal = getClass().getClassLoader().getResource("Character/heal.wav");
+    public URL awSound = getClass().getClassLoader().getResource("Weapon/awSound.wav");
+    public URL gameOverSound = getClass().getClassLoader().getResource("GeneralStuff/gameOverSound.wav");
+    public URL gameOverVoice = getClass().getClassLoader().getResource("GeneralStuff/gameOverVoice.wav");
+    public URL cannotSound = getClass().getClassLoader().getResource("GeneralStuff/cannotSound.wav");
+    public URL engineNoise = getClass().getClassLoader().getResource("GeneralStuff/engineNoise.wav");
     public URL currentMusic;
 
     public static void main(String[] args) {
