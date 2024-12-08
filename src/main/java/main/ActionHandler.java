@@ -7,7 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class ActionHandler implements EventHandler<ActionEvent> {
-
+    // TODO: Add a class-level Javadoc to explain the purpose of this class
+    // TODO: Ensure class names and methods follow naming conventions
+    // TODO: Use meaningful variable names for 'yourChoice', like 'buttonText'
     GameManager gm;
 
     public ActionHandler(GameManager gm) {
@@ -16,12 +18,16 @@ public class ActionHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent e) {
+        // TODO: Catch exceptions to handle unexpected errors when casting or processing button actions
         String yourChoice = ((javafx.scene.control.Button) e.getSource()).getText();
         handleAction(yourChoice);
     }
 
     // handles the action commands
     public void handleAction(String yourChoice) {
+        // TODO: Use a Map or more efficient structure to store button actions instead of switch-case
+        // TODO: Add comments for each section of switch-case to describe what each block does
+        // TODO: Add input validation for 'yourChoice' to avoid NullPointerExceptions
         switch (yourChoice) {
             // SCENE 1
             case "lookJeramiah":

@@ -16,6 +16,9 @@ import java.net.URL;
 import java.util.List;
 
 public class GameManager extends Application {
+    // TODO: Add Javadoc to explain the purpose of this class and its main responsibilities
+    // TODO: Handles exceptions gracefully in all methods, such as file-related operations or invalid inputs
+    // TODO: Add proper shutdown handling when the application exists
 
     ActionHandler aHandler = new ActionHandler(this);
     public UI ui = new UI(this);
@@ -67,6 +70,8 @@ public class GameManager extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        // TODO: Add a try-catch block to catch expressions during UI initialization
+        // TODO: Ensure all JavaFX components are initialized before use
 
         currentMusic = mainTheme;
         playMusic(currentMusic);
@@ -77,6 +82,7 @@ public class GameManager extends Application {
     }
 
     public void playSE(URL url) {
+        // TODO: Add null checks for 'url' before using it
 
         se.setFile(url);
         se.play(url);
@@ -94,6 +100,7 @@ public class GameManager extends Application {
 
 
     public void startGameTimer() {
+        // TODO: Ensure the timer stops properly if already running before starting a new one
         startTime = System.nanoTime();
         gameTimer = new AnimationTimer() {
             @Override
@@ -104,6 +111,10 @@ public class GameManager extends Application {
         };
         gameTimer.start();
     }
+    
+    /**
+     * Stops the game timer and updates the leaderboard if the monster is defeated.
+     */
 
     public void stopGameTimer() {
         if (gameTimer != null) {
@@ -116,6 +127,10 @@ public class GameManager extends Application {
         }
     }
 
+/**
+     * Updates the game's timer display on the UI.
+     */
+    
     public void updateTimerUI() {
         // Format the time as minutes and seconds
         long seconds = elapsedTime / 1000;
@@ -125,6 +140,11 @@ public class GameManager extends Application {
         // Display the timer on the UI
         ui.timerLabel.setText(String.format("%02d:%02d", minutes, seconds));
     }
+
+    /**
+     * Displays the Leaderboard with the fastest times.
+     */
+    
     public void showLeaderboard() {
         List<String> leaderboard = timeManager.getFormattedFastestTimes();
         ui.displayLeaderboard(leaderboard); // Add a method in UI to display the leaderboard
