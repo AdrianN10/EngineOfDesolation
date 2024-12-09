@@ -11,6 +11,7 @@ public class SceneChanger {
 
         this.gm = gm;
     }
+
 //can avoid using booleans for all the backgrounds if a method to automatically choose a background 1-6 is used
     public void showScene1(){
 

@@ -41,8 +41,6 @@ public class GameManager extends Application {
     Music music = new Music();
     SoundEffect se = new SoundEffect();
 
-    //could create a seperate class called resource manager where the main class
-
     //SOUND
      public URL mainTheme = getClass().getClassLoader().getResource("mainTheme.wav");
     public URL monsterTheme = getClass().getClassLoader().getResource("monsterTheme.wav");
