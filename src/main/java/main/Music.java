@@ -19,7 +19,8 @@ public class Music {
             clip = AudioSystem.getClip();
             clip.open(sound);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            throw new RuntimeException(e);
+            //TODO: Log the error or notify the user via the UI
+            throw new RuntimeException(e); // TODO: Replace with more user-friendly error handling
         }
     }
 
