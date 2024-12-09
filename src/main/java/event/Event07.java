@@ -2,21 +2,37 @@ package event;
 
 import main.GameManager;
 
+/**
+ * Manages scenes and actions for Event07.
+ */
 public class Event07 {
 
     GameManager gm;
     public int julianLife = 2;
 
+    /**
+     * Sets up Event07 with the game manager.
+     * 
+     * @param gm the main game manager
+     */
     public Event07(GameManager gm) {
 
         this.gm = gm;
     }
+
+    /**
+     * Shows Julian and his current condition.
+     */
     public void lookJulian() {
         gm.ui.messageText.setText("Julian is in serious condition");
         if(julianLife ==0) {
             gm.ui.messageText.setText("You see Julien's lifeless body");
         }
     }
+
+    /**
+     * Talks to Julian.
+     */
     public void talkJulian() {
         if(julianLife == 2 || julianLife == 1) {
             gm.ui.messageText.setText("*Julian cries when he sees you* I don't want to die...");
@@ -26,6 +42,10 @@ public class Event07 {
             gm.playSE(gm.cannotSound);
         }
     }
+
+    /**
+     * Comforts Julian and updates his state.
+     */
     public void holdJulian() {
         if(julianLife == 2) {
             gm.ui.messageText.setText("*You hold Julian's hand and tell him it'll be okay*\nJulian says his last words: Can you spin it one last time for me?");
@@ -73,4 +93,8 @@ public class Event07 {
         gm.ui.messageText.setText("*You thank Adrian for his great efforts*\n (Adrian will give you 10% of his profits if you avenge Julian)");
 
     }
+
+    // TODO: Add checks for null or invalid game manager and player objects.
+    // TODO: Ensure Julian's life values are limited to valid states (0, 1, 2).
+    // TODO: Simplify repeated messages and conditions into a helper function.
 }
