@@ -4,6 +4,10 @@ import javafx.scene.image.ImageView;
 import main.GameManager;
 
 public class EngineStealerMonster extends Monster {
+/**
+This sets the engine stealer monster, its interactions
+ */
+//should include javadoc for all of the game
 
     private ImageView blood;
 
@@ -84,7 +88,9 @@ public class EngineStealerMonster extends Monster {
             if (blood != null) blood.setVisible(false);
         }
     }
+    //added dialogue to help make the battle more clear... I assume that's what was happening
     public void letLiveSponge() {
+        gm.ui.messageText.setText("Mercy was never an option.");
         gm.playSE(gm.monsterRoar);
     }
 

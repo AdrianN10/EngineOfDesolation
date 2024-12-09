@@ -2,6 +2,8 @@ package event;
 
 import main.GameManager;
 
+//Add java dox here and to the rest of the events
+
 public class Event02 {
 
     GameManager gm;
